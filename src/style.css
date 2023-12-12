@@ -1,0 +1,31 @@
+html, body {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.hover-drop-down {
+    width: 100px;
+    position: relative;
+    border: 2px solid;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.hover-drop-down-btn {
+    cursor: pointer;
+}
+
+.hover-drop-down-content {
+    display: none;
+}
+
+.hover-drop-down-btn:hover ~ .hover-drop-down-content {
+    display: block;
+    position: absolute;
+}
