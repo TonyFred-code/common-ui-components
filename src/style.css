@@ -8,7 +8,7 @@ body {
     justify-content: center;
 }
 
-.hover-drop-down {
+.hover-drop-down, .click-drop-down {
     width: 100px;
     position: relative;
     border: 2px solid;
@@ -17,15 +17,20 @@ body {
     justify-content: center;
 }
 
-.hover-drop-down-btn {
+.hover-drop-down-btn, .click-drop-down-btn {
     cursor: pointer;
 }
 
-.hover-drop-down-content {
+.hover-drop-down-content, .click-drop-down-content {
     display: none;
 }
 
 .hover-drop-down-btn:hover ~ .hover-drop-down-content {
+    display: block;
+    position: absolute;
+}
+
+.click-drop-down-content.clicked  {
     display: block;
     position: absolute;
 }
