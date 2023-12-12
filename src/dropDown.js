@@ -1,10 +1,11 @@
 let DROPCONTENTSELECTOR = '';
+let CLOSEALLOPEN = false;
 
-function closeOpenDropContent(dropContentSelector, triggerClass) {
+function closeOpenDropContent(dropContentSelector, triggerClass, leaveOpen) {
   const dropDownContents = document.querySelectorAll(dropContentSelector);
 
   dropDownContents.forEach((dropContent) => {
-    if (dropContent !== null) {
+    if (dropContent !== leaveOpen) {
       dropContent.classList.remove(triggerClass);
     }
   });
@@ -13,17 +14,14 @@ function closeOpenDropContent(dropContentSelector, triggerClass) {
 function openDropContent(dropContentName, triggerClass) {
   const dropContent = document.querySelector(`#${dropContentName}`);
 
-  closeOpenDropContent(DROPCONTENTSELECTOR, triggerClass);
+  if (CLOSEALLOPEN === true) {
+    closeOpenDropContent(DROPCONTENTSELECTOR, triggerClass, dropContent);
+  }
 
   if (dropContent === null) {
     throw new Error(`Failed to assigned ${triggerClass} to a null`);
   } else {
-    const { classList } = dropContent;
-    if (classList.contains(triggerClass)) {
-      dropContent.classList.remove(triggerClass);
-    } else {
-      dropContent.classList.add(triggerClass);
-    }
+    dropContent.classList.toggle(triggerClass);
   }
 }
 
@@ -44,9 +42,11 @@ argument3 (dropContent)
 export default function initTriggerButton(
   triggerBtnSelector,
   triggerClass,
-  dropContentSelector
+  dropContentSelector,
+  { closeAllOpen = false } = {}
 ) {
   DROPCONTENTSELECTOR = dropContentSelector;
+  CLOSEALLOPEN = closeAllOpen;
 
   const triggerButtons = document.querySelectorAll(triggerBtnSelector);
 
