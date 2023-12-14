@@ -1,11 +1,15 @@
 html, body {
-    width: 100%;
     box-sizing: border-box;
 }
 
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+#drop-down-section {
+    align-self: center;
 }
 
 .hover-drop-down, .click-drop-down {
@@ -33,4 +37,18 @@ body {
 .click-drop-down-content.clicked  {
     display: block;
     position: absolute;
+}
+
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a.active {
+    font-size: 1.9rem;
 }
