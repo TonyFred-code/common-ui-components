@@ -1,54 +1,103 @@
-html, body {
-    box-sizing: border-box;
+html,
+body {
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 #drop-down-section {
-    align-self: center;
+  align-self: center;
 }
 
-.hover-drop-down, .click-drop-down {
-    width: 100px;
-    position: relative;
-    border: 2px solid;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
+.hover-drop-down,
+.click-drop-down {
+  width: 100px;
+  position: relative;
+  border: 2px solid;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
 }
 
-.hover-drop-down-btn, .click-drop-down-btn {
-    cursor: pointer;
+.hover-drop-down-btn,
+.click-drop-down-btn {
+  cursor: pointer;
 }
 
-.hover-drop-down-content, .click-drop-down-content {
-    display: none;
+.hover-drop-down-content,
+.click-drop-down-content {
+  display: none;
 }
 
 .hover-drop-down-btn:hover ~ .hover-drop-down-content {
-    display: block;
-    position: absolute;
+  display: block;
+  position: absolute;
 }
 
-.click-drop-down-content.clicked  {
-    display: block;
-    position: absolute;
+.click-drop-down-content.clicked {
+  display: block;
+  position: absolute;
 }
-
 
 nav {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 nav a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 nav a.active {
-    font-size: 1.9rem;
+  font-size: 1.9rem;
+}
+
+.image-slider-section {
+    align-self: center;
+}
+
+.image-slider-container {
+  width: 400px;
+  max-width: 80%;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  max-width: 100%;
+}
+
+.slide-img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.slide.hide {
+    display: none;
+}
+
+.slide.show {
+    display: block;
+}
+
+.image-slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.image-slider-container .next {
+    right: 30px;
+}
+
+.image-slider-container .prev {
+    left: 30px;
 }
