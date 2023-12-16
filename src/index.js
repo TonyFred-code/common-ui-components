@@ -58,6 +58,8 @@ function loadImage() {
   img5Container.appendChild(img5);
 }
 
+const imageSliderContainer = document.querySelector('.image-slider-container');
+
 function setActive(slideNo) {
   const slide = document.querySelector(`.slide-${slideNo}`);
 
@@ -71,6 +73,8 @@ const nextBtn = document.querySelector('.image-slider-container .next');
 
 const prevBtn = document.querySelector('.image-slider-container .prev');
 
+const navigationCircles = document.querySelectorAll('.dot');
+
 function hideShown() {
   const shownSlide = document.querySelector('.slide.show');
   if (shownSlide === null) return;
@@ -78,31 +82,44 @@ function hideShown() {
   shownSlide.classList.add('hide');
 }
 
-function showNext(e) {
-  const elm = e.currentTarget;
-  const nextSlide = Number(e.currentTarget.dataset.showSlide);
+function showNext() {
+  const currentSlide = Number(imageSliderContainer.dataset.showing);
   hideShown();
-
-  elm.dataset.showSlide = nextSlide + 1 > 5 ? 1 : nextSlide + 1;
-  prevBtn.dataset.showSlide = nextSlide - 1 < 1 ? 5 : nextSlide - 1;
+  const nextSlide = currentSlide + 1 > 5 ? 1 : currentSlide + 1;
 
   const slide = document.querySelector(`.slide-${nextSlide}`);
+  imageSliderContainer.dataset.showing = nextSlide;
   slide.classList.add('show');
   slide.classList.remove('hide');
 }
 
-function showPrev(e) {
-  const elm = e.currentTarget;
-  const prevSlide = Number(elm.dataset.showSlide);
+function showPrev() {
+  // const elm = e.currentTarget;
+  const currentSlide = Number(imageSliderContainer.dataset.showing);
   hideShown();
 
-  elm.dataset.showSlide = prevSlide - 1 < 1 ? 5 : prevSlide - 1;
-  nextBtn.dataset.showSlide = prevSlide + 1 > 5 ? 1 : prevSlide + 1;
+  const prevSlide = currentSlide - 1 < 1 ? 5 : currentSlide - 1;
+
   const slide = document.querySelector(`.slide-${prevSlide}`);
+  imageSliderContainer.dataset.showing = prevSlide;
   slide.classList.add('show');
   slide.classList.remove('hide');
-  console.log(prevSlide);
 }
 
 nextBtn.addEventListener('click', showNext);
 prevBtn.addEventListener('click', showPrev);
+
+function showSlide(e) {
+  const elm = e.currentTarget;
+  const { slide } = elm.dataset;
+  hideShown();
+
+  imageSliderContainer.dataset.showing = slide;
+  const imgSlide = document.querySelector(`.slide-${slide}`);
+  imgSlide.classList.add('show');
+  imgSlide.classList.remove('hide');
+}
+
+navigationCircles.forEach((navigationCircle) => {
+  navigationCircle.addEventListener('click', showSlide);
+});
