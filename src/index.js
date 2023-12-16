@@ -1,6 +1,7 @@
 import './style.css';
 import initTriggerButton from './dropDown';
 import initTabTriggers from './tab';
+import createImage from './createImg';
 import slide1ImageSrc from './images/slide-image-1.jpg';
 import slide2ImageSrc from './images/slide-image-2.jpg';
 import slide3ImageSrc from './images/slide-image-3.jpg';
@@ -14,13 +15,6 @@ initTriggerButton(
 );
 
 initTabTriggers('active', '.tab-link');
-
-function createImage(src, alt = '') {
-  const img = new Image();
-  img.src = src;
-  img.alt = alt;
-  return img;
-}
 
 function loadImage() {
   const img1 = createImage(slide1ImageSrc);
@@ -84,6 +78,7 @@ function hideShown() {
 
 function showNext() {
   const currentSlide = Number(imageSliderContainer.dataset.showing);
+  ``;
   hideShown();
   const nextSlide = currentSlide + 1 > 5 ? 1 : currentSlide + 1;
 
