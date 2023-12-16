@@ -1,12 +1,11 @@
-# A Project Template
+# A Project About Common UI Interfaces
 
-This was created as a project [link to odin project](https://www.theodinproject.com).
-
-![Sample screenshot - not linked]()
+This was created as a project as a way to learn about components common to developers [in this lesson](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions) on Odin Project.
 
 ## Table of Contents
 
 - [Demo](#demo)
+- [Screenshot](#screenshot)
 - [Build With](#built-with)
 - [Contributing](#contributing)
 - [License](#license)
@@ -16,9 +15,13 @@ This was created as a project [link to odin project](https://www.theodinproject.
 
 <!-- You can demo it live at [Demo](https://tonyfred-code.github.io/). -->
 
+## Screenshot
+
+![Common UI Component Screenshot](./src//images/common-ui-components-completed.png)
+
 ## Built With
 
-- Some Languages
+- JS
 - HTML5
 - CSS3
 
@@ -37,3 +40,5 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 This project is licensed under the [MIT LICENSE](./LICENSE)
 
 ## Acknowledgments
+
+Great thanks to w3schools for their content
