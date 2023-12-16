@@ -13,7 +13,7 @@ This was created as a project as a way to learn about components common to devel
 
 ## Demo
 
-<!-- You can demo it live at [Demo](https://tonyfred-code.github.io/). -->
+You can demo it live at [Demo](https://tonyfred-code.github.io/common-ui-components/)
 
 ## Screenshot
 
