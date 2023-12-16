@@ -59,7 +59,7 @@ nav a.active {
 }
 
 .image-slider-section {
-    align-self: center;
+  align-self: center;
 }
 
 .image-slider-container {
@@ -82,25 +82,25 @@ nav a.active {
 }
 
 .slide.hide {
-    display: none;
+  display: none;
 }
 
 .slide.show {
-    display: block;
+  display: block;
 }
 
 .image-slider-container button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .image-slider-container .next {
-    right: 30px;
+  right: 30px;
 }
 
 .image-slider-container .prev {
-    left: 30px;
+  left: 30px;
 }
 
 .circles {
