@@ -78,7 +78,6 @@ function hideShown() {
 
 function showNext() {
   const currentSlide = Number(imageSliderContainer.dataset.showing);
-  ``;
   hideShown();
   const nextSlide = currentSlide + 1 > 5 ? 1 : currentSlide + 1;
 
